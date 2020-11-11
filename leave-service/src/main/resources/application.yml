@@ -1,0 +1,28 @@
+server:
+  port: 9195
+spring:
+  zipkin:
+    base-url: http://localhost:9411/
+  application:
+    name: leave-service
+    datasource:
+        password: Vidula@9975
+        url: jdbc:mysql://localhost:3306/users_database?allowPublicKeyRetrieval=true&useSSL=false
+        username: admin
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                 dialect: org.hibernate.dialect.MySQL8Dialect
+                 driverClassName: com.mysql.cj.jdbc.Driver
+                 jdbc:
+                    lob:
+                        non_contextual_creation: true
+logging:
+  file: C:/Users/vidula/Desktop/oms.log
+
+bezkoder:
+  app:
+    jwtSecret: bezKoderSecretKey
+    jwtExpirationMs: 86400000

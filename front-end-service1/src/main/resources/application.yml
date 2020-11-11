@@ -1,0 +1,14 @@
+server:
+  port: 9199
+spring:
+  zipkin:
+    base-url: http://localhost:9411/
+  application:
+    name: front-end-service
+logging:
+  file: C:/Users/vidula/Desktop/oms.log
+
+bezkoder:
+  app:
+    jwtSecret: bezKoderSecretKey
+    jwtExpirationMs: 86400000

@@ -1,0 +1,60 @@
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  cloud:
+    gateway:
+      routes:
+        - id: employee-service
+          uri: lb://EMPLOYEE-SERVICE
+          predicates:
+            - Path=/api/v1/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: employee-service
+                fallbackuri: forward:/employeeFallback
+        - id: ecommerce-service
+          uri: lb://ECOMMERCE-SERVICE
+          predicates:
+            - Path=/books/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: ecommerce-service
+                fallbackuri: forward:/ecommerceFallback
+        - id: spring-security
+          uri: lb://SPRING-SECURITY
+          predicates:
+            - Path=/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: spring-security
+                fallbackuri: forward:/springsecurityFallback
+  eureka:
+    client:
+      register-with-eureka: true
+      fetch-registry: true
+      service-url:
+        defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost 
+          
+                
+
+server:
+  port: 8989
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000  

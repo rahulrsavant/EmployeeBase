@@ -1,0 +1,29 @@
+bezkoder:
+    app:
+        jwtExpirationMs: 86400000
+        jwtSecret: bezKoderSecretKey
+info:
+    app:
+        description: Spring Boot - RestTemplate CRUD Rest Client Example
+        name: Spring Boot - RestTemplate CRUD Rest Client Example
+        version: 1.0.0
+server:
+    port: 9197
+spring:
+    datasource:
+        password: Vidula@9975
+        url: jdbc:mysql://localhost:3306/users_database?allowPublicKeyRetrieval=true&useSSL=false
+        username: admin
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+                jdbc:
+                    lob:
+                        non_contextual_creation: true
+    application:
+      name: salary-service
+    logging:
+      file: /home
