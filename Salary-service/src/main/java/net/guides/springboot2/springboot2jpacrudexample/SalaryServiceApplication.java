@@ -1,4 +1,4 @@
-package com.example.demo;
+package net.guides.springboot2.springboot2jpacrudexample;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
