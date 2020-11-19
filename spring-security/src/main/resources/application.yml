@@ -8,7 +8,7 @@ info:
         name: Spring Boot - RestTemplate CRUD Rest Client Example
         version: 1.0.0
 server:
-    port: 9190
+    port: 8080
 spring:
     datasource:
         password: Vidula@9975
