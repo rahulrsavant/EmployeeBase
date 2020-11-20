@@ -22,7 +22,7 @@ import main.java.com.javainuse.model.Book;
 import org.springframework.security.access.prepost.PreAuthorize;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping(path = "books")
 public class BookController {
 	

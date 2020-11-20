@@ -38,7 +38,6 @@ import com.example.demo.security.service.UserDetailsImpl;
 
 
 @CrossOrigin(origins = "*", maxAge = 3600)
-//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {

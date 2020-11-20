@@ -25,7 +25,7 @@ import net.guides.springboot2.springboot2jpacrudexample.model.EmployeeDTO;
 import net.guides.springboot2.springboot2jpacrudexample.repository.EmployeeRepository;
 import net.guides.springboot2.springboot2jpacrudexample.service.EmployeeService;
 
-//@CrossOrigin(origins = "http://localhost:4200")
+
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/v1")

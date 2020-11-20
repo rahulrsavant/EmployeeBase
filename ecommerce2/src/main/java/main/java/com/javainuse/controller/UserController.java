@@ -17,7 +17,8 @@ import main.java.com.javainuse.db.UserRepository;
 import main.java.com.javainuse.model.User;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping(path = "users")
 public class UserController {
 
